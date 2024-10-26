@@ -3,13 +3,26 @@ import "./todolistform.css"
 
 const Todolistform = () => {
   return (
-    <form action="">
-        <label htmlFor="Title">Title</label>
-        <input type="text" />
-        <label htmlFor="Completed">Completed</label>
-        <input type="text" />
-        <button type='submit'>Submit</button>
-    </form>   
+    <form>
+    <div>
+      <label htmlFor="title">Title:</label>
+      <input
+        type="text"
+        id="title"
+      
+      />
+    </div>
+
+    <div>
+      <label htmlFor="completed">Completed:</label>
+      <input
+        type="checkbox"
+        id="completed"
+     />
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>  
   )
 }
 
