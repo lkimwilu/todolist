@@ -1,5 +1,6 @@
 import axios from "axios"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import "./todolist.css"
 const Todolist = () => {
 
 
@@ -7,18 +8,31 @@ const Todolist = () => {
     console.log("todos", todos);
 
 
-    const fetchTodos = async () => {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/todos')
-        const data = response.data
+   const fetchTodos = async () => {
+    const response = await axios.get('https://jsonplaceholder.typicode.com/todos');
+    const data = response.data.slice(0, 10); // Limit to the first 10 items
 
-        setTodos(data)
-        console.log("response", response);
-    }
-    fetchTodos()
+    setTodos(data);
+    console.log("response", response);
+};
+
+    
+    
+    useEffect(()=>{
+        
+        fetchTodos()
+    }, [])
+
 
     return (
         <div>
-            {/* {todos && todos.map} */}
+            <h3>My TODOS</h3>
+            {todos && todos.map((todo)=>(
+                <ul key={todo.id}>
+                    <li>{todo.title}</li>
+                    <li>{todo.completed}</li>
+                </ul>
+            ))}
         </div>
     )
 }
