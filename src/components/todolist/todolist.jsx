@@ -13,7 +13,7 @@ const Todolist = () => {
     const data = response.data.slice(0, 10); // Limit to the first 10 items
 
     setTodos(data);
-    console.log("response", response);
+
 };
 
     
