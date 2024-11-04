@@ -5,6 +5,7 @@ import Todolistform from './components/todolistform/todolistform'
 import Gallery from './components/gallery/gallery'
 import Users from './components/users/users'
 import CreateUser from './components/users/Create_user/CreateUser'
+import Resources from './components/resources/resources'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,8 +14,9 @@ function App() {
     <>
       {/* <Todolist /> */}
       {/* <Todolistform/> */}
-      <Users/>
+      {/* <Users/> */}
       {/* <CreateUser/> */}
+      < Resources/>
 
       {/* <Gallery /> */}
       
